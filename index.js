@@ -2,6 +2,9 @@ var R, G, B;
 var color;
 var chosen;
 var won = false;
+var fire = 0;
+var fireSpan = document.querySelector("#points");
+var bestSpan = document.querySelector("#best");
 document.querySelector(".jumbotron").style.background = "#cccecc";
 
 resultSpan = document.querySelector("#result");
@@ -14,6 +17,10 @@ for(var i=0;i<cardList.length;i++){
         if (!won) {
             if (this.id == chosen) {
                 won = true;
+                fire++;
+                fireSpan.innerText = fire;
+                if(fire > Number(bestSpan.innerText))
+                    bestSpan.innerText = fire;
                 resultSpan.innerText = "Correct!";
                 document.querySelector(".jumbotron").style.background = color;
                 for (var i = 0; i < cardList.length; i++) {
@@ -23,6 +30,8 @@ for(var i=0;i<cardList.length;i++){
                 setTimeout(resetGame, 1000);
             }
             else {
+                fire = 0;
+                fireSpan.innerText = fire;
                 resultSpan.innerText = "Try again";
                 this.style.backgroundColor = "white";
                 this.classList.add("border-white");
@@ -48,7 +57,7 @@ function generateColor(){
 function updatePage(){
     generateColor();
 
-    var sp = document.querySelector("span");
+    var sp = document.querySelector("#rgb");
     sp.innerText = "RGB("+R+", "+G+", "+ B+")";
 
     chosen = Math.floor(Math.random() * cardList.length);

@@ -4,14 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Game</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid text-center p-0 mb-0">
-        <h1 class="display-3 py-5 mb-0">
+        <h1 class="display-3 mb-0">
             THE GREAT  <br>
-            <span class="display-2"> </span> <br>
+            <span id="rgb" class="display-2"> </span> <br>
             GUESSING GAME
         </h1>
     </div>
@@ -20,7 +21,11 @@
     <div id="bar" class="mb-5">
         <div class="container d-flex justify-content-around">
             <button id="reset" class="btn btn-info mt-0">NEW COLORS</button>
-            <span id="result" class="justify-self-center align-self-center">sdas</span>
+            <span id="result" class="justify-self-center align-self-center"></span>
+            <div class="align-self-center">
+                <span class="mr-2"> <i class="fas fa-fire"></i> <span id="points">0</span> </span>
+                <i class="fas fa-trophy"></i> <span id="best">0</span>
+            </div>
         </div>
     </div>
     <div class="container">
