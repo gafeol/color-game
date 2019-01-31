@@ -4,6 +4,8 @@ var chosen;
 var won = false;
 document.querySelector(".jumbotron").style.background = "#cccecc";
 
+resultSpan = document.querySelector("#result");
+
 var cardList = document.querySelectorAll(".card");
 
 for(var i=0;i<cardList.length;i++){
@@ -12,13 +14,16 @@ for(var i=0;i<cardList.length;i++){
         if (!won) {
             if (this.id == chosen) {
                 won = true;
+                resultSpan.innerText = "Correct!";
                 document.querySelector(".jumbotron").style.background = color;
                 for (var i = 0; i < cardList.length; i++) {
                     cardList[i].style.backgroundColor = color;
                     cardList[i].classList.remove("border-white");
                 }
+                setTimeout(resetGame, 1000);
             }
             else {
+                resultSpan.innerText = "Try again";
                 this.style.backgroundColor = "white";
                 this.classList.add("border-white");
             }
@@ -61,8 +66,11 @@ function updatePage(){
     }
 }
 
-document.getElementById("reset").addEventListener("click", () => {
+function resetGame(){
     won = false;
+    resultSpan.innerText = "";
     document.querySelector(".jumbotron").style.background = "#cccecc";
     updatePage();
-})
+}
+
+document.getElementById("reset").addEventListener("click", resetGame);

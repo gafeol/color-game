@@ -12,3 +12,27 @@
     line-height: 0.7;
     transition: all 0.3s;
 }
+
+#reset{
+    font-size: 2rem;
+    font-weight: 800;
+    background-color: transparent;
+    border: none;
+    transition: all 0.5s;
+}
+
+#result{
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+    background-color: transparent;
+}
+
+#reset:hover{
+    background-color: white;
+    color: darkslategray;
+}
+
+#bar{
+    background-color: darkslategray;
+}
