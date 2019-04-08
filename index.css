@@ -18,6 +18,7 @@
     background-color: transparent;
     border: none;
     transition: all 0.5s;
+    outline: none;
 }
 
 #result{

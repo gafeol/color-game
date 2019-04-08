@@ -5,6 +5,7 @@ var won = false;
 var fire = 0;
 var fireSpan = document.querySelector("#points");
 var bestSpan = document.querySelector("#best");
+var resetButton = document.getElementById("reset");
 document.querySelector(".jumbotron").style.background = "#cccecc";
 
 resultSpan = document.querySelector("#result");
@@ -17,6 +18,7 @@ for(var i=0;i<cardList.length;i++){
         if (!won) {
             if (this.id == chosen) {
                 won = true;
+                resetButton.innerText = "PLAY AGAIN";
                 fire++;
                 fireSpan.innerText = fire;
                 if(fire > Number(bestSpan.innerText))
@@ -76,10 +78,11 @@ function updatePage(){
 }
 
 function resetGame(){
+    resetButton.innerText = "NEW COLORS";
     won = false;
     resultSpan.innerText = "";
     document.querySelector(".jumbotron").style.background = "#cccecc";
     updatePage();
 }
 
-document.getElementById("reset").addEventListener("click", resetGame);
+resetButton.addEventListener("click", resetGame);
